@@ -183,7 +183,7 @@ func (s *Spanner) Run(migration io.Reader) error {
 		}
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 60*60*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 90*60*time.Second)
 	defer cancel()
 	op, err := s.db.admin.UpdateDatabaseDdl(ctx, &adminpb.UpdateDatabaseDdlRequest{
 		Database:   s.config.DatabaseName,
